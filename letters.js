@@ -1,4 +1,6 @@
 
+//==============================//
+
 var Letter = function(actualLetter){
 
 	this.currentDisplay = "_"

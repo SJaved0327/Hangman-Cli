@@ -1,5 +1,7 @@
 var Letter = require("./letters.js");
 
+//==============================//
+
 
 var Word = function (actualWord){
 	
@@ -11,7 +13,7 @@ var Word = function (actualWord){
 
 Word.prototype.RenderLetters = function(actualWord){
 	for(var i = 0; i < this.actualWord.length; i++){
-		var pushLetter = new Letters(this.actualWord[i]);
+		var pushLetter = new Letter(this.actualWord[i]);
 		this.wordArray.push(pushLetter);
 	};
 };

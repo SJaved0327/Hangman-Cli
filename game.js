@@ -9,6 +9,7 @@ var NewGame = function(){
 	this.randomWord = this.wordList[Math.floor(Math.random() * this.wordList.length)];
 	this.chosenWord = new Word(this.randomWord);
 	this.guesses = 9;
+	
 };
 
 //==============================//
