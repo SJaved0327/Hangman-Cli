@@ -1,7 +1,10 @@
 var Words = require("./words.js");
 var Letters = require("./letters.js");
 
+var newGame = new NewGame;
+
 var StartGame = function (){
+
 
 
 
