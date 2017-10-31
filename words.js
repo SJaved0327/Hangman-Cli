@@ -1,20 +1,20 @@
 var Letters = require("./letters.js");
 
 
-function Words (){
+var Words = function (actualWord){
 	
-	var chosenWord = "";
-var numBlanks = 0;
-var blanksAndSuccesses = [];
-numBlanks = lettersInChosenWord.length;
-
-  console.log(chosenWord);
-
-
+	this.actualWord = actualWord;
+	this.wordArray = [];
+	this.RenderLetters();
+	
 };
 
-var numGuesses = 9;
-
+Words.prototype.RenderLetters = function(actualWord){
+	for(var i = 0; i < this.actualWord.length; i++){
+		var pushLetter = new Letter(this.actualWord[i]);
+		this.wordArray.push(pushLetter);
+	};
+};
 
 
 

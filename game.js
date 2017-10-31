@@ -1,4 +1,5 @@
 var Word = require("./words.js");
+var Letter = require("./letters.js");
 
 //==============================//
 
