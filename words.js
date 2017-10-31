@@ -1,3 +1,6 @@
+var Letters = require("./letters.js");
+
+
 function Words (){
 	
 	var chosenWord = "";
