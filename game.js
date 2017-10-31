@@ -14,8 +14,12 @@ var Game = function(){
 	//chosenWord is stored as Word object
 	this.chosenWord = new Word(this.randomWord);
 	//guesses available in NewGame starts as 9
+
 };
 
 //==============================//
+
+
+
 
 module.exports = Game;

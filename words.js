@@ -10,10 +10,10 @@ var Word = function(actualWord){
 	this.actualWord = actualWord;
 	//empty array will hold all the individual letters
 	this.wordArray = [];
+	//empty array will hold what's printed to console
+	this.displayArray = [];
 	//call function to populate array
 	this.RenderLetters();
-	//empty array will hold guesses
-	this.guesses = [];
 };
 
 //splits word into individual letters and push each to array
@@ -25,18 +25,34 @@ Word.prototype.RenderLetters = function(){
 		var pushLetter = new Letter(this.actualWord[i]);
 		//pushes each Letter object into array
 		this.wordArray.push(pushLetter);
+		this.displayArray.push(pushLetter.currentDisplay);
 	};
 };
 
-Word.prototype.CompareLetters = function(userGuess){
+Word.prototype.CheckLetters = function(userGuess){
+
+	var letterInWord = false;
+
 	for(var i = 0; i < this.wordArray.length; i++){
 		var currentLetter = this.wordArray[i];
 		if (currentLetter === userGuess){
 			currentLetter.guessCorrect = true;
 			currentLetter.currentDisplay = currentLetter.actualLetter;
+			letterInWord = true;
 		};
 	};
+
+	if (letterInWord) {
+
+		console.log(this.displayArray);
+  	}
+  	else{
+
+    guesses--;
+
+  	};
 };
+
 
 
 

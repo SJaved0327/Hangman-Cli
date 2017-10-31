@@ -16,7 +16,7 @@ var guesses = 9;
 
 var StartGame = function (newGame){
 
-	if (newGame.guesses < 9){
+	if (guesses < 9){
 
 		console.log("Guesses left: ")
 		inquirer.prompt([
@@ -36,8 +36,30 @@ var StartGame = function (newGame){
 	      count++;
 	      // run the askquestion function again so as to either end the loop or ask the questions again
 	      askQuestion();
+	      
     });
 
 //==============================//
+
+var EndGame = function(){
+
+	if (newGame.chosenWord.actualWord.toString() === newGame.chosenWord.displayArray.toString()) {
+	    console.log("You win!");
+	    StartGame(newGame);
+	    guesses = 9;
+	  }
+	  else if (guesses === 0) {
+	    console.log("You lose");
+	    StartGame(newGame);
+	    guesses = 9;
+	  }
+
+};
+
+
+//==============================//
+
+
+
 
 StartGame(newGame);
