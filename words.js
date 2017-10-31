@@ -1,7 +1,7 @@
-var Letters = require("./letters.js");
+var Letter = require("./letters.js");
 
 
-var Words = function (actualWord){
+var Word = function (actualWord){
 	
 	this.actualWord = actualWord;
 	this.wordArray = [];
@@ -9,20 +9,20 @@ var Words = function (actualWord){
 	
 };
 
-Words.prototype.RenderLetters = function(actualWord){
+Word.prototype.RenderLetters = function(actualWord){
 	for(var i = 0; i < this.actualWord.length; i++){
-		var pushLetter = new Letter(this.actualWord[i]);
+		var pushLetter = new Letters(this.actualWord[i]);
 		this.wordArray.push(pushLetter);
 	};
 };
 
-
+module.exports = Word;
 
 
 
 
 /////////
-
+/*
 // GLOBAL VARIABLES (Accessible by all functions)
 // ==================================================================================================
 
@@ -184,3 +184,5 @@ document.onkeyup = function(event) {
   // Runs the code after each round is done.
   roundComplete();
 };
+
+*/

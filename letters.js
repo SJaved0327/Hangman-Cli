@@ -1,5 +1,5 @@
 
-function Letters (actualLetter) {
+var Letter = function(actualLetter){
 
 	this.currentDisplay = "_"
 	this.actualLetter = actualLetter;
@@ -7,7 +7,7 @@ function Letters (actualLetter) {
 
 };
 
-Letters.prototype.letterInWord = function(guessLetter){
+Letter.prototype.letterInWord = function(guessLetter){
 	if(this.actualLetter == guessLetter){
 			this.currentDisplay = this.actualLetter; 
 			this.guessCorrect = true;
@@ -16,5 +16,5 @@ Letters.prototype.letterInWord = function(guessLetter){
 		};
 };
 
-module.exports = Letters;
+module.exports = Letter;
 
