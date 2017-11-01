@@ -1,0 +1,19 @@
+NEW GAME: 
+{"wordList":["hello","goodbye","whenevs"],
+
+"randomWord":"whenevs",
+
+"chosenWord":
+	{"actualWord":"whenevs",
+	"wordArray":
+		[{"currentDisplay":"_","actualLetter":"w","guessCorrect":false},
+		{"currentDisplay":"_","actualLetter":"h","guessCorrect":false},
+		{"currentDisplay":"_","actualLetter":"e","guessCorrect":false},
+		{"currentDisplay":"_","actualLetter":"n","guessCorrect":false},
+		{"currentDisplay":"_","actualLetter":"e","guessCorrect":false},
+		{"currentDisplay":"_","actualLetter":"v","guessCorrect":false},
+		{"currentDisplay":"_","actualLetter":"s","guessCorrect":false}],
+	"displayArray":["_","_","_","_","_","_","_"]
+	}
+
+}

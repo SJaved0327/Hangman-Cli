@@ -14,6 +14,42 @@ var Word = function(actualWord){
 	this.displayArray = [];
 	//call function to populate array
 	this.RenderLetters();
+	//
+	this.CheckLetters = function(userGuess){
+
+			this.displayArray = [];
+
+			for(var i = 0; i < this.wordArray.length; i++){
+				
+				var currentLetter = this.wordArray[i];
+
+				if (currentLetter.actualLetter === userGuess){
+
+					currentLetter.currentDisplay = currentLetter.actualLetter;
+
+					this.displayArray.push(currentLetter.currentDisplay);
+
+				}else{
+
+					this.displayArray.push(currentLetter.currentDisplay);
+
+				};
+			};
+
+			console.log(this.displayArray);
+
+		};
+	//
+	this.CheckWords = function(){
+		 	for(var i = 0; i < this.actualWord.length; i++){
+		 		if(this.actualWord.charAt(i) != this.displayArray[i]){
+		 			return false;
+		 		}
+	 		}
+
+	 		return true;
+
+		};
 };
 
 //splits word into individual letters and push each to array
@@ -27,8 +63,16 @@ Word.prototype.RenderLetters = function(){
 		this.wordArray.push(pushLetter);
 		this.displayArray.push(pushLetter.currentDisplay);
 	};
+
+	console.log(this.displayArray);
 };
 
+
+module.exports = Word;
+
+
+
+/*
 Word.prototype.CheckLetters = function(userGuess){
 
 	var letterInWord = false;
@@ -44,29 +88,37 @@ Word.prototype.CheckLetters = function(userGuess){
 
 	if (letterInWord) {
 
+		this.displayArray = [];
+
+		for(var i = 0; i < this.wordArray.length; i++){
+			this.displayArray.push(this.wordArray[i].currentDisplay);
+		}
+
 		console.log(this.displayArray);
   	}
   	else{
 
-    guesses--;
+    	guesses--;
+
+    	console.log(this.displayArray);
 
   	};
 };
 
 
+Word.prototype.CheckWords = function(){
+ 	for(var i = 0; i < this.actualWord.length; i++){
+ 		if(this.actualWord.charAt(i) != this.displayArray[i]){
+ 			return false;
+ 		}
+
+ 		return true;
+ 	}
+
+};
+*/
 
 
-
-
-
-
-
-
-
-
-
-
-module.exports = Word;
 
 
 

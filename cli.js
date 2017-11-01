@@ -6,41 +6,49 @@ var Game = require("./game.js");
 var inquirer = require("inquirer");
 
 //==============================//
+//==============================//
 
-var newGame = new Game;
+var StartGame = function (newGame, guesses){
+
+	if (guesses > 0){
+
+		console.log(`Guesses left: ${guesses}`);
+
+		inquirer.prompt([
+	      {
+	        name: "letter",
+	        message: "Guess a letter:"
+	      }
+		]).then(function(answers){
+			var userGuess = answers.letter
+			
+			newGame.chosenWord.CheckLetters(userGuess);
+
+			if (newGame.chosenWord.CheckWords() === true){
+				console.log("Winner!");
+				guesses = 0;
+			}
+			if(guesses === 0){
+				console.log("You lose!");
+			}
+
+			guesses--;
+		    StartGame(newGame, guesses);
+			      
+		});
+	};
+
+};
+
+//==============================//
+
+var newGame = new Game();
 var guesses = 9;
 
-//newGame.chosenWord.wordArray[i].currentDisplay
+StartGame(newGame, guesses);
 
 //==============================//
-
-var StartGame = function (newGame){
-
-	if (guesses < 9){
-
-		console.log("Guesses left: ")
-		inquirer.prompt([
-      {
-        letter: "letter",
-        message: "Guess a letter:"
-      },
-	]).then(function(answers){
-	      var newPlayer = new Player(
-	        answers.name,
-	        answers.position,
-	        answers.offense,
-	        answers.defense);
-      // pushes newguy object into our array
-	      playerArray.push(newPlayer);
-	      // add one to count to increment our recursive loop by one
-	      count++;
-	      // run the askquestion function again so as to either end the loop or ask the questions again
-	      askQuestion();
-	      
-    });
-
-//==============================//
-
+/*
 var EndGame = function(){
 
 	if (newGame.chosenWord.actualWord.toString() === newGame.chosenWord.displayArray.toString()) {
@@ -55,11 +63,5 @@ var EndGame = function(){
 	  }
 
 };
-
-
+*/
 //==============================//
-
-
-
-
-StartGame(newGame);
